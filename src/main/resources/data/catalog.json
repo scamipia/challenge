@@ -1,0 +1,176 @@
+{
+  "item": {
+    "id": "MLA123456",
+    "title": "Auriculares Bluetooth Noise Cancelling",
+    "permalink": "https://www.mercadolibre.com.ar/MLA123456",
+    "condition": "new",
+    "warranty": "Garantía oficial 12 meses",
+    "description": "Auriculares inalámbricos con cancelación activa de ruido y hasta 30 horas de batería.",
+    "price": {
+      "amount": 79999.90,
+      "currency": "ARS"
+    },
+    "availableQuantity": 120,
+    "soldQuantity": 532,
+    "lastUpdated": "2024-05-20T10:30:00Z",
+    "seller": {
+      "id": "S123",
+      "nickname": "TechStoreOficial",
+      "reputation": 4.8
+    },
+    "shipping": {
+      "freeShipping": true,
+      "logisticType": "fulfillment",
+      "tags": [
+        "envios_gratis",
+        "retiro_en_sucursal"
+      ]
+    },
+    "pictures": [
+      {
+        "url": "http://http2.mlstatic.com/D_1.jpg",
+        "secureUrl": "https://http2.mlstatic.com/D_1.jpg",
+        "type": "principal",
+        "order": 1
+      },
+      {
+        "url": "http://http2.mlstatic.com/D_2.jpg",
+        "secureUrl": "https://http2.mlstatic.com/D_2.jpg",
+        "type": "detalle",
+        "order": 2
+      }
+    ],
+    "attributes": [
+      {
+        "id": "BRAND",
+        "name": "Marca",
+        "valueName": "SoundMagic"
+      },
+      {
+        "id": "MODEL",
+        "name": "Modelo",
+        "valueName": "NoisePro X200"
+      },
+      {
+        "id": "COLOR",
+        "name": "Color",
+        "valueName": "Negro"
+      }
+    ]
+  },
+  "seller": {
+    "id": "S123",
+    "nickname": "TechStoreOficial",
+    "reputation": 4.8,
+    "reputationLevel": "oro",
+    "totalSales": 12540,
+    "responseRate": 0.97,
+    "responseTimeHours": 6,
+    "policies": [
+      "Devolución gratis dentro de los 30 días",
+      "Atención personalizada 24/7",
+      "Facturación para empresas"
+    ]
+  },
+  "relatedItems": [
+    {
+      "id": "MLA654321",
+      "title": "Auriculares In-Ear Inalámbricos",
+      "price": 42999.00,
+      "thumbnail": "https://http2.mlstatic.com/R_1.jpg"
+    },
+    {
+      "id": "MLA987654",
+      "title": "Auriculares Over-Ear Studio Pro",
+      "price": 129999.99,
+      "thumbnail": "https://http2.mlstatic.com/R_2.jpg"
+    },
+    {
+      "id": "MLA135790",
+      "title": "Soporte de Auriculares RGB",
+      "price": 18999.50,
+      "thumbnail": "https://http2.mlstatic.com/R_3.jpg"
+    }
+  ],
+  "questions": [
+    {
+      "id": "Q1",
+      "itemId": "MLA123456",
+      "text": "¿Incluye cable auxiliar?",
+      "askedAt": "2024-06-01T14:05:00Z",
+      "answer": "Sí, incluye cable auxiliar de 1,5 metros.",
+      "answeredAt": "2024-06-01T15:12:00Z"
+    },
+    {
+      "id": "Q2",
+      "itemId": "MLA123456",
+      "text": "¿Se pueden plegar para transportar?",
+      "askedAt": "2024-05-29T10:30:00Z",
+      "answer": "Se pliegan parcialmente y traen funda rígida.",
+      "answeredAt": "2024-05-29T12:45:00Z"
+    }
+  ],
+  "reviews": [
+    {
+      "id": "R1",
+      "itemId": "MLA123456",
+      "author": "María G.",
+      "rating": 5,
+      "title": "Excelente compra",
+      "comment": "Cancelación de ruido increíble y la batería dura muchísimo.",
+      "createdAt": "2024-06-02T09:20:00Z"
+    },
+    {
+      "id": "R2",
+      "itemId": "MLA123456",
+      "author": "Carlos P.",
+      "rating": 4,
+      "title": "Muy buenos",
+      "comment": "Cómodos y buen sonido. El micrófono podría ser mejor.",
+      "createdAt": "2024-05-28T18:05:00Z"
+    },
+    {
+      "id": "R3",
+      "itemId": "MLA123456",
+      "author": "Lucía M.",
+      "rating": 3,
+      "title": "Cumplen",
+      "comment": "Esperaba más graves, pero aún así están bien por el precio.",
+      "createdAt": "2024-05-20T21:10:00Z"
+    },
+    {
+      "id": "R4",
+      "itemId": "MLA123456",
+      "author": "Federico L.",
+      "rating": 5,
+      "title": "Los volvería a comprar",
+      "comment": "Son cómodos para usar todo el día y la app móvil es muy completa.",
+      "createdAt": "2024-04-30T11:00:00Z"
+    }
+  ],
+  "shippingOptions": [
+    {
+      "type": "express",
+      "carrier": "Mercado Envíos Flex",
+      "cost": 0.00,
+      "estimatedDeliveryDays": 1,
+      "pickupAvailable": true
+    },
+    {
+      "type": "standard",
+      "carrier": "Correo Argentino",
+      "cost": 1999.99,
+      "estimatedDeliveryDays": 3,
+      "pickupAvailable": false
+    },
+    {
+      "type": "pickup",
+      "carrier": "Retiro en sucursal",
+      "cost": 0.00,
+      "estimatedDeliveryDays": 2,
+      "pickupAvailable": true
+    }
+  ]
+}
+
+

@@ -47,7 +47,7 @@ Ejemplo con `curl`:
 curl http://localhost:8080/api/items/MLA123456/reviews?page=0\&size=5 | jq
 ```
 
-El repositorio en memoria (`InMemoryItemRepository`) precarga datos coherentes para el item `MLA123456`, su vendedor (`S123`) y los recursos relacionados (preguntas, reseñas, envíos, relacionados, etc.).
+Los datos de ejemplo viven en `src/main/resources/data/catalog.json`; `SampleDataLoader` los carga al iniciar la aplicación y los expone a los repositorios en memoria.
 
 ## Estructura relevante
 
@@ -55,11 +55,7 @@ El repositorio en memoria (`InMemoryItemRepository`) precarga datos coherentes p
 - `src/main/java/com/hackerrank/sample/dto/ItemDetailDto` — DTO expuesto por la API.
 - `src/main/java/com/hackerrank/sample/controller/ItemController` — Controlador REST.
 - `src/main/java/com/hackerrank/sample/service/ItemService` — Capa de servicio y mapeos.
-- `src/main/java/com/hackerrank/sample/repository/InMemoryItemRepository` — Fuente de datos en memoria.
+- `src/main/java/com/hackerrank/sample/repository/SampleDataLoader` — Carga el JSON de ejemplo y lo distribuye a los repositorios.
+- `src/main/java/com/hackerrank/sample/repository/InMemoryItemRepository` — Fuente de datos en memoria que delega en el loader.
 
-## Próximos pasos sugeridos
-
-- Reemplazar el repositorio en memoria por integración con un servicio real o base de datos.
-- Añadir validaciones de entrada y `@ControllerAdvice` para un manejo uniforme de errores.
-- Configurar perfiles (`application.yml`) para distintas fuentes de datos.
 
