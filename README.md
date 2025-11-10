@@ -1,13 +1,33 @@
-# API de Detalle de Items
+# 🛒 API de Detalle de Ítems
 
-Backend estilo Mercado Libre que expone datos de un producto para su página de detalle.
+Backend inspirado en **Mercado Libre**, que expone los datos de un producto y sus recursos asociados (vendedor, reseñas, preguntas, opciones de envío y productos relacionados).  
+Diseñado para demostrar buenas prácticas en arquitectura, testeo, documentación y CI/CD.
 
-## Requisitos
+---
 
-- Java 21
-- Maven 3.9+ (o wrapper `mvnw` si lo agregas más adelante)
+## 🚀 Tecnologías
 
-## Ejecución
+- **Java 21**
+- **Spring Boot 3**
+- **Maven 3.9+**
+- **Springdoc OpenAPI** (Swagger UI)
+- **JUnit 5 / Mockito / AssertJ**
+- **GitHub Actions** (CI/CD)
+
+---
+
+## 🧠 Descripción del proyecto
+
+El servicio expone endpoints RESTful que permiten obtener el **detalle completo de un ítem**, junto con información complementaria del vendedor, reseñas, preguntas frecuentes y productos relacionados.  
+Los datos de ejemplo estan en `src/main/resources/data/catalog.json`; `SampleDataLoader` los deserializa al iniciar la app y los repositorios en memoria los sirven para cumplir con el requerimiento de persistencia liviana.
+
+La arquitectura sigue el patrón **Controller → Service → Repository**, con DTOs para desacoplar el modelo interno del contrato HTTP y pruebas unitarias en todas las capas.
+
+---
+
+## ⚙️ Ejecución local
+
+Cloná el repositorio y ejecutá:
 
 ```bash
 mvn spring-boot:run
@@ -20,26 +40,16 @@ La aplicación inicia en `http://localhost:8080`.
 - Swagger UI: `http://localhost:8080/swagger-ui/index.html`
 - OpenAPI JSON: `http://localhost:8080/v3/api-docs`
 
-## Tests
-
-```bash
-mvn test
-```
-
-Se ejecutan pruebas unitarias (`src/test/java/com/hackerrank/sample/...`) y el runner dinámico `HttpJsonDynamicUnitTest`, que consume los casos en `src/test/resources/testcases/*.json` para validar el contrato HTTP end-to-end. El reporte personalizado queda en `target/customReports`.
-
-## Automatización CI
-
-El workflow de GitHub Actions (`.github/workflows/ci.yml`) compila y ejecuta `mvn verify` en cada push y pull request, usando Java 21 en Ubuntu.
+Estas rutas se generan automáticamente mediante springdoc-openapi-starter-webmvc-ui.
 
 ## Endpoints
 
-- `GET /api/items/{id}`: detalle completo del item.
-- `GET /api/items/{id}/related`: sugerencias de productos (id, título, precio, thumbnail).
-- `GET /api/items/{id}/questions`: preguntas frecuentes con respuestas del vendedor.
-- `GET /api/items/{id}/reviews?page=0&size=10`: reseñas paginadas con métricas de promedio y distribución.
-- `GET /api/items/{id}/shipping-options?zipcode=1000`: opciones de envío calculadas según código postal.
-- `GET /api/sellers/{sellerId}`: reputación, ventas y políticas principales del vendedor.
+- `GET /api/items/{id}`: Devuelve el detalle completo del item.
+- `GET /api/items/{id}/related`: Sugerencias de productos (id, título, precio, imagen).
+- `GET /api/items/{id}/questions`: Preguntas frecuentes con respuestas del vendedor.
+- `GET /api/items/{id}/reviews?page=0&size=10`: Reseñas paginadas con métricas de promedio y distribución.
+- `GET /api/items/{id}/shipping-options?zipcode=1000`: Opciones de envío calculadas según código postal.
+- `GET /api/sellers/{sellerId}`: Información del vendedor: reputación, ventas y políticas.
 
 Ejemplo con `curl`:
 
@@ -47,7 +57,24 @@ Ejemplo con `curl`:
 curl http://localhost:8080/api/items/MLA123456/reviews?page=0\&size=5 | jq
 ```
 
-Los datos de ejemplo viven en `src/main/resources/data/catalog.json`; `SampleDataLoader` los carga al iniciar la aplicación y los expone a los repositorios en memoria.
+Los datos de ejemplo se encuentran en `src/main/resources/data/catalog.json`.  
+Al iniciar la aplicación, la clase `SampleDataLoader` los carga en memoria y los pone a disposición de los repositorios simulados.  
+
+El catálogo incluye un ítem principal con **ID `MLA123456`**, su **vendedor asociado (`S123`)**, y los recursos relacionados:  
+preguntas frecuentes, reseñas de usuarios, opciones de envío y productos sugeridos.
+
+## Tests
+
+```bash
+mvn test
+```
+
+- Pruebas unitarias e integración ligera (`src/test/java/com/hackerrank/sample/...`), incluyendo `ItemApiE2ETest` que levanta la aplicación completa y valida `GET /api/items/{id}`.
+- Runner dinámico `HttpJsonDynamicUnitTest`, que consume los casos en `src/test/resources/testcases/*.json` para validar escenarios HTTP end-to-end. El reporte personalizado queda en `target/customReports`.
+
+## Automatización CI
+
+El workflow de GitHub Actions (`.github/workflows/ci.yml`) compila y ejecuta `mvn verify` en cada push y pull request, usando Java 21 en Ubuntu.
 
 ## Estructura relevante
 
@@ -57,5 +84,3 @@ Los datos de ejemplo viven en `src/main/resources/data/catalog.json`; `SampleDat
 - `src/main/java/com/hackerrank/sample/service/ItemService` — Capa de servicio y mapeos.
 - `src/main/java/com/hackerrank/sample/repository/SampleDataLoader` — Carga el JSON de ejemplo y lo distribuye a los repositorios.
 - `src/main/java/com/hackerrank/sample/repository/InMemoryItemRepository` — Fuente de datos en memoria que delega en el loader.
-
-
