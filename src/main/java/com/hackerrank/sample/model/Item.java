@@ -10,14 +10,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
 
-/**
- * Representa la información necesaria para renderizar la página de detalle de un item
- * al estilo Mercado Libre. Se modelan los atributos más habituales que requiere un
- * frontend: datos básicos, precio, vendedor, logística, atributos y recursos multimedia.
- *
- * Esta clase es inmutable para facilitar su uso en servicios de solo lectura y permite
- * la serialización directa a JSON mediante Jackson.
- */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public final class Item implements Serializable {
     private final String id;
