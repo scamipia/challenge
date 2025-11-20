@@ -1,7 +1,7 @@
 # 🛒 API de Detalle de Ítems
 
 Backend inspirado en **Mercado Libre**, que expone los datos de un producto y sus recursos asociados (vendedor, reseñas, preguntas, opciones de envío y productos relacionados).  
-Diseñado para demostrar buenas prácticas en arquitectura, testeo, documentación y CI/CD.
+Diseñado para demostrar buenas prácticas en arquitectura, testeo, documentación y CI.
 
 ---
 
@@ -12,7 +12,7 @@ Diseñado para demostrar buenas prácticas en arquitectura, testeo, documentaci�
 - **Maven 3.9+**
 - **Springdoc OpenAPI** (Swagger UI)
 - **JUnit 5 / Mockito / AssertJ**
-- **GitHub Actions** (CI/CD)
+- **GitHub Actions** (CI)
 
 ---
 
